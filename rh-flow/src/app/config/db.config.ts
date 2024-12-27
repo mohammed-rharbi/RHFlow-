@@ -5,12 +5,15 @@ export const connectDB = async () => {
 
     try {
 
-        if (!process.env.MONGO_URI) {
-            throw new Error('Add Mongo URI to .env.local')
-          }
-          
         const conn = await mongoose.connect(process.env.MONGO_URI!);
         console.log(`MongoDB Connected: ${conn.connection.host}`);
+
+        const db = mongoose.connection;
+
+        db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+        db.once('open', () => {
+            console.log('MongoDB connected successfully');
+        });
 
     } catch (error) {
         console.log(error);
