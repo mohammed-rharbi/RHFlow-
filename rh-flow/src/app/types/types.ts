@@ -15,3 +15,13 @@ export interface LoginUser{
 }
 
 
+export interface Job {
+    _id: string;
+    title: string;
+    description: string;
+    companyName: string;
+    location: string;
+    skills: string[];
+    employmentType: string;
+    experience: string;
+  }
