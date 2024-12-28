@@ -23,6 +23,7 @@ export default function LoginForm() {
         e.preventDefault()
         try {
             const response = await fetcher.post('/auth/login', formData);
+            localStorage.setItem('token', response.data.token)
             router.push('/home')
 
         } catch (error) {
