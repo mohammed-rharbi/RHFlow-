@@ -14,6 +14,9 @@ export interface LoginUser{
     password: string;
 }
 
+export interface Params {
+    params: { id: string };
+  }
 
 export interface Job {
     _id: string;
@@ -24,4 +27,9 @@ export interface Job {
     skills: string[];
     employmentType: string;
     experience: string;
+  }
+
+
+  export interface FilterJobsProps {
+    onFilter: (filters: { search: string; location: string; experience: string; employment: string }) => void;
   }
