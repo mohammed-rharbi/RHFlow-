@@ -1,5 +1,3 @@
-
-
 export interface Users {
     firstName: string;
     lastName: string;
@@ -32,4 +30,14 @@ export interface Job {
 
   export interface FilterJobsProps {
     onFilter: (filters: { search: string; location: string; experience: string; employment: string }) => void;
+  }
+
+
+  export interface JobApp {
+    _id?: string;
+    userId: string;
+    jobId: string;
+    phoneNumber: string;
+    resume: string | File;
+    coverLetter: string;
   }
