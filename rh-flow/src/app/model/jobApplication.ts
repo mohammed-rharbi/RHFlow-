@@ -20,7 +20,23 @@ const jobApplicationSchema = new mongoose.Schema({
         default: 'applied',
     },
 
-    
+    phoneNumber: {
+        type: String,
+        required: true,
+    },
+
+    resume: {
+        type: String,
+        required: true,
+    },
+
+    coverLetter: {
+        type: String,
+        required: true,
+    },  
+     
+} , {
+    timestamps: true
 })
 
 const JobApplication = mongoose.models.JobApplication || mongoose.model('JobApplication', jobApplicationSchema);
