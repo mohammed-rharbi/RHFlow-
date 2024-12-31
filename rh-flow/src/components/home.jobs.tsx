@@ -29,6 +29,7 @@ export default function HomeJobs({ jobs }: { jobs: Job[] }) {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-gray-100 text-gray-800 py-12 px-6">
       <div className="max-w-screen-xl mx-auto">
         <JobHeader />
+
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
 
           <FilterJobs onFilter={handleFilter} />
@@ -42,7 +43,7 @@ export default function HomeJobs({ jobs }: { jobs: Job[] }) {
                 >
                   <JobsCard {...job} />
 
-                  <div className="absolute bottom-0 left-0 right-0 bg-indigo-100 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className=" bottom-0 left-0 right-0 bg-indigo-100 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 
                     <Link href={`/jobInfo/${job._id}`}>
                     <button 
