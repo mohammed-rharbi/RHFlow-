@@ -1,28 +1,24 @@
 'use client'
     
 import { useContext, useEffect } from 'react'
-import { AuthContext } from './authProvider'
 import { useRouter } from 'next/navigation'
+import { useAuth } from '../app/context/authProvider'
 
 export default function RouteGuard({ children }: { children: React.ReactNode }) {
     const router = useRouter()
-    const context = useContext(AuthContext)
+    const { isAuthenticated } = useAuth()
 
-    if (!context) {
-        return null;
-    }
-
-    const { user } = context;
-
+  
     useEffect(() => {
-        if (!user) {
+        if (!isAuthenticated) {
             router.push('/login')
         }
-    }, [user, router])
+    }, [isAuthenticated, router])
 
-    if (!user) {
+    if (!isAuthenticated) {
         return <div>You are not authorized to access this page</div>
     }
 
     return children
 }
+

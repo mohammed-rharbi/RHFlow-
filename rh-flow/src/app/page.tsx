@@ -1,9 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import Navbar from "@/components/navbar";
 
 export default function Landing() {
   return (
    
+    <>
+    <Navbar />
+
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
 
     <header className="relative bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 text-white">
@@ -17,13 +21,13 @@ export default function Landing() {
         </p>
         <div className="mt-10 flex justify-center gap-6">
           <Link
-            href="/jobs"
+            href="/login"
             className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-full shadow-lg hover:shadow-xl hover:bg-gray-100 transition duration-300"
           >
             Browse Jobs
           </Link>
           <Link
-            href="/hr"
+            href="/login"
             className="px-8 py-4 bg-indigo-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:bg-purple-800 transition duration-300"
           >
             HR Dashboard
@@ -98,7 +102,6 @@ export default function Landing() {
       </Link>
     </section>
 
-    {/* Footer */}
     <footer className="bg-gray-900 py-12">
       <div className="container mx-auto px-6 text-center text-gray-400">
         <p>&copy; {new Date().getFullYear()} Job & HR Platform. All Rights Reserved.</p>
@@ -116,5 +119,6 @@ export default function Landing() {
       </div>
     </footer>
   </div>
+  </>
   );
 }

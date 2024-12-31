@@ -1,18 +1,17 @@
 import React from 'react';
 import { Job } from '@/app/types/types';
+import Link from 'next/link';
 
 export default function JobInfoCard({ job }: { job: Job }) {
   return (
     <div className="max-w-4xl mx-auto w-full mt-6 bg-white shadow rounded-lg">
+
       <div className="p-6 border-b">
 
         <div className="flex items-start justify-between">
 
           <div className="flex items-center gap-4">
-            <img
-              src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXkLQRkPy03NXdPr4r5P13fjCy5wBZqrQIJA&s'}
-              alt={job.companyName}
-              className="w-16 h-16 object-contain rounded-lg"
+            <img src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXkLQRkPy03NXdPr4r5P13fjCy5wBZqrQIJA&s'} alt={job.companyName}className="w-16 h-16 object-contain rounded-lg"
             />
             <div>
               <h2 className="text-xl font-bold text-gray-800">{job.title}</h2>
@@ -39,6 +38,7 @@ export default function JobInfoCard({ job }: { job: Job }) {
             <p className="text-gray-800 font-medium">{}</p>
           </div>
         </div>
+
       </div>
 
       <div className="p-6">
@@ -61,9 +61,13 @@ export default function JobInfoCard({ job }: { job: Job }) {
       </div>
 
       <div className="p-6 border-t flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <button className="w-full sm:w-auto px-6 py-3 bg-yellow-500 text-white font-semibold rounded-lg hover:bg-yellow-600 transition">
-          Apply Now
-        </button>
+
+        <Link href={`/jobInfo/apply/${job._id}`}>
+          <button className="w-full sm:w-auto px-6 py-3 bg-yellow-500 text-white font-semibold rounded-lg hover:bg-yellow-600 transition">
+            Apply Now
+          </button>
+        </Link>
+
         <button className="w-full sm:w-auto px-6 py-3 bg-gray-100 text-gray-800 font-semibold rounded-lg hover:bg-gray-200 transition border">
           Save
         </button>

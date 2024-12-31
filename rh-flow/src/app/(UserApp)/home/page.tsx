@@ -1,4 +1,4 @@
-import { Job } from '../types/types';
+import { Job } from '../../types/types';
 import HomeJobs from '@/components/home.jobs';
 
 async function fetchJobs(): Promise<Job[]> {
