@@ -1,14 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Job, FilterJobsProps } from '../app/types/types';
+import { FilterJobsProps } from '../app/types/types';
 
 
 
 export default function FilterJobs({ onFilter }: FilterJobsProps) {
   const [search, setSearch] = useState('');
   const [location, setLocation] = useState('');
-  const [experience, setExperience] = useState('');
+  const [experience, setExperience] = useState(''); 
   const [employment, setEmployment] = useState('');
 
   const handleFilter = () => {
@@ -16,7 +16,7 @@ export default function FilterJobs({ onFilter }: FilterJobsProps) {
   };
 
   return (
-    <div className="lg:col-span-1 h-[500px] bg-white p-6 rounded-lg shadow-md">
+    <div className="lg:col-span-1 h-[500px] bg-white p-6 rounded-lg z-10 shadow-md">
       <h2 className="text-xl font-semibold text-gray-800 mb-6">Filter Jobs</h2>
       <form
         onSubmit={(e) => {
